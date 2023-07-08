@@ -39,8 +39,12 @@ public class UserDaoService {
         take in a list
         convert to stream
         filtering based on a predicate (which checks if the id matches)
+
+        Tips
+        orElse(): returns <other> in case unexpected input is received
          */
         Predicate<? super User> predicate = user -> user.getId().equals(id);
-        return users.stream().filter(predicate).findFirst().get();
+        return users.stream().filter(predicate).findFirst().orElse(null);
+
     }
 }
