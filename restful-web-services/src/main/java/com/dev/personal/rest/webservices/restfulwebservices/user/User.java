@@ -15,9 +15,9 @@ public class User {
     }
 
     private Integer id;
-    @Size(min=2)
+    @Size(min=2, message = "Name should have at least two characters")
     private String name;
-    @Past
+    @Past(message = "Birthdate should be in the past")
     private LocalDate birthDate;
 
     //Getters and Setters
